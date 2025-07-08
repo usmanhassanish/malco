@@ -1,54 +1,177 @@
-<section style="padding: 2rem;">
-  <h2 style="text-align:center;">Service Catalog</h2>
-  <table style="width:100%; max-width: 800px; margin:auto; border-collapse: collapse;">
-    <thead>
-      <tr style="background:#f0f0f0;">
-        <th style="padding: 10px; border: 1px solid #ccc;">Service</th>
-        <th style="padding: 10px; border: 1px solid #ccc;">Description</th>
-        <th style="padding: 10px; border: 1px solid #ccc;">Price (₦)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="padding:10px; border:1px solid #ccc;">Basic Website Design</td>
-        <td style="padding:10px; border:1px solid #ccc;">Up to 3 pages, mobile-friendly</td>
-        <td style="padding:10px; border:1px solid #ccc;">70,000</td>
-      </tr>
-      <tr>
-        <td style="padding:10px; border:1px solid #ccc;">Business Website</td>
-        <td style="padding:10px; border:1px solid #ccc;">Up to 7 pages, contact form, animation</td>
-        <td style="padding:10px; border:1px solid #ccc;">120,000</td>
-      </tr>
-      <tr>
-        <td style="padding:10px; border:1px solid #ccc;">Hosting Setup</td>
-        <td style="padding:10px; border:1px solid #ccc;">Domain + Hosting configuration</td>
-        <td style="padding:10px; border:1px solid #ccc;">15,000</td>
-      </tr>
-      <tr>
-        <td style="padding:10px; border:1px solid #ccc;">Monthly Maintenance</td>
-        <td style="padding:10px; border:1px solid #ccc;">Updates, support, backup</td>
-        <td style="padding:10px; border:1px solid #ccc;">10,000</td>
-      </tr>
-      <tr>
-        <td style="padding:10px; border:1px solid #ccc;">SEO Setup</td>
-        <td style="padding:10px; border:1px solid #ccc;">Basic SEO for visibility</td>
-        <td style="padding:10px; border:1px solid #ccc;">25,000</td>
-      </tr>
-      <tr>
-        <td style="padding:10px; border:1px solid #ccc;">E-Commerce Website</td>
-        <td style="padding:10px; border:1px solid #ccc;">Store, payment, products, admin panel</td>
-        <td style="padding:10px; border:1px solid #ccc;">200,000</td>
-      </tr>
-    </tbody>
-  </table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Hosting Plans Catalog</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
 
-  <div style="margin-top:2rem; text-align:center;">
-    <h3>Payment Details</h3>
-    <p>
-      <strong>Name:</strong> Usman Hassan<br>
-      <strong>Bank:</strong> Zenith Bank<br>
-      <strong>Account Number:</strong> 1234567890
-    </p>
-    <p>Once you select your preferred service(s), kindly make payment and share the receipt to proceed.</p>
+    header {
+      background: #2b2e4a;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    .plans-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .plan {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      padding: 25px;
+      box-sizing: border-box;
+      border-top: 5px solid #2b2e4a;
+      transition: transform 0.3s ease;
+    }
+
+    .plan:hover {
+      transform: translateY(-5px);
+    }
+
+    .plan h2 {
+      color: #2b2e4a;
+      font-size: 1.6rem;
+      margin-top: 0;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .pros, .cons {
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    .pros strong {
+      color: green;
+    }
+
+    .cons strong {
+      color: red;
+    }
+
+    .developer-fee {
+      background: #fff;
+      padding: 30px 20px;
+      text-align: center;
+      margin: 20px auto;
+      max-width: 700px;
+      border-top: 4px solid #f26419;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .developer-fee h2 {
+      color: #f26419;
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #2b2e4a;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .plans-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .plan {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Website Hosting Plans Catalog</h1>
+    <p>Select a package that suits your website's needs</p>
+  </header>
+
+  <div class="plans-container">
+
+
+    <!-- Professional Plan -->
+    <div class="plan">
+      <h2>🟡 Basic Plan</h2>
+      <p class="price">$30/month or $360/year</p>
+      <ul>
+        <li>3 Websites</li>
+        <li>100 GB SSD Storage</li>
+        <li>Good Traffic</li>
+        <li>Daily Backups</li>
+      </ul>
+      <div class="pros"><strong>Pros:</strong> Good for growth, Reliable performance</div>
+      <div class="cons"><strong>Cons:</strong> Limited to 3 sites</div>
+    </div>
+
+    <!-- Premium Plan -->
+    <div class="plan">
+      <h2>🔴 Premium Plan</h2>
+      <p class="price">$50/month or $500/year</p>
+      <ul>
+        <li>5 Websites</li>
+        <li>200 GB SSD Storage</li>
+        <li>Higher Traffic</li>
+        <li>Hourly Data Backup</li>
+      </ul>
+      <div class="pros"><strong>Pros:</strong> Fast, Scalable, Full Support</div>
+      <div class="cons"><strong>Cons:</strong> Higher cost</div>
+    </div>
+
   </div>
-</section>
+
+  <!-- Developer Fee Section -->
+  <div class="developer-fee">
+    <h2>💻 Developer Service Fee</h2>
+    <p>
+      One-time payment for website creation and setup: <strong>$600</strong><br />
+      This includes:
+    </p>
+    <ul style="list-style: circle; text-align: left; max-width: 500px; margin: 0 auto;">
+      <li>Website design & development</li>
+      <li>Initial content upload</li>
+      <li>Domain connection & setup</li>
+      <li>Testing and optimization</li>
+    </ul>
+    <p style="margin-top: 20px;"><strong>Total Due: $600 + Hosting Plan of Your Choice</strong></p>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 ussy_dev. All rights reserved.
+  </div>
+
+</body>
+</html>
