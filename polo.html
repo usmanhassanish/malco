@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<style type="text/css">
+		*
+		{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'poppins',trebuchet ms,  monospace;
+			text-decoration: none;
+		}
+		@media (min-width:700px)
+		{
+			.nav-small
+			{
+				display: none;
+			}
+			.drop-down
+			{
+				display: none;
+			}
+			#drop
+			{
+				display: none;
+			}
+			#malco-brief-small
+			{
+				display: none;
+			}
+			
+		}
+		@media (max-width:699px)
+		{
+			.nav-big
+			{
+				display: none;
+			}
+			.big-links
+			{
+				display: none;
+			}
+			#rem 
+			{
+				display: none;
+			}
+			#malco-brief-big
+			{
+				display: none;
+			}
+			
+		}
+		.nav-big
+		{
+			width: 100%;
+			height: 23vh;
+			background-color: white;
+			
+			overflow: auto;
+			background-color: whitesmoke;
+			color: maroon;
+		}
+		.nav-big-left
+		{
+			width: 30%;
+			float: left;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 2vw;
+		}
+		.nav-big-right
+		{
+			width: 70%;
+			float: left;
+			height: 100%;
+			background-color: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 2vw;
+
+		}
+		.nav-small
+		{
+			width: 100%;
+			text-align: center;
+			color: maroon;
+			background-color: whitesmoke;
+		}
+		#drop
+		{
+			text-align: center;
+			background-color: maroon;
+			color: white;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			display: none;
+		}
+		.drop-down
+		{
+			overflow: auto;
+		}
+		.big-links-left
+		{
+			width: 100%;
+			height: 12vh;
+			font-size: 4vh;
+			float: left;
+			background-color: maroon;
+			color: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	
+		#footer
+		{
+			background-color: maroon;
+			color: white;
+			text-align: center;
+			
+			
+		}
+		#bot-border
+		{
+			border: 3px inset white;
+			border-top: none;
+			border-bottom: none;
+			margin-top: 5px;
+			width: 80%;
+			
+			margin-left: 10%;
+		}
+		#polo-theme
+		{
+			width: 100%;
+			height: 60vh;
+			background-image: url('assets/c1.jpg');
+			background-position: center;
+			background-size: cover;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			color: maroon;
+		}
+		#fixtures
+		{
+			width: 70%;
+			margin-left: 15%;
+			position: fixed;
+			margin-top: -80vh;
+			background-color: white;
+			border-radius: ;
+			display: none;
+			text-align: center;
+			border: 4px solid whitesmoke;
+			color: maroon;
+		}
+		#more-games
+		{
+			background-color: white;
+		}
+		.pad-5
+		{
+			padding: 5px;
+			font-size: 1.2rem;
+		}
+		.polo-about
+		{
+			color: maroon;
+			font-size: 1.5rem;
+			padding-bottom: 3px;
+		}
+		#polo-record
+		{
+			color: maroon;
+			background-color: whitesmoke;
+			padding-top: 3px;
+			text-align: center;
+		}
+		#record
+		{
+			margin-left: 10px;
+			font-size: 1.5rem;
+			padding: 3px;
+		}
+		.slider {
+      width: 100%;
+      max-width: 600px;
+      height: 300px;
+      margin: auto;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .slides {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+    }
+
+    .nav button {
+      background-color: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    @media (min-width:700px)
+		{
+			.nav-small
+			{
+				display: none;
+			}
+			.drop-down
+			{
+				display: none;
+			}
+			#drop
+			{
+				display: none;
+			}
+			#malco-brief-small
+			{
+				display: none;
+			}
+			
+		}
+		@media (max-width:699px)
+		{
+			.nav-big
+			{
+				display: none;
+			}
+			.big-links
+			{
+				display: none;
+			}
+			#malco-brief-big
+			{
+				display: none;
+			}
+			
+		}
+		.nav-big
+		{
+			width: 100%;
+			height: 23vh;
+			background-color: white;
+			
+			overflow: auto;
+			background-color: whitesmoke;
+			color: maroon;
+		}
+		.nav-big-left
+		{
+			width: 30%;
+			float: left;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 2vw;
+		}
+		#separate
+		{
+			width: 90%;
+			margin-left: 5%;
+			border: 2px solid maroon;
+		}
+		a 
+		{
+			color: inherit;
+		}
+		.nav-big-right
+		{
+			width: 70%;
+			float: left;
+			height: 100%;
+			background-color: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 2vw;
+
+		}
+		.nav-small
+		{
+			width: 100%;
+			text-align: center;
+			color: maroon;
+			background-color: whitesmoke;
+		}
+		#drop
+		{
+			text-align: center;
+			background-color: maroon;
+			color: white;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			display: none;
+		}
+		.drop-down
+		{
+			overflow: auto;
+		}
+		.big-links-left
+		{
+			width: 100%;
+			height: 12vh;
+			font-size: 4vh;
+			float: left;
+			background-color: maroon;
+			color: whitesmoke;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="nav-big">
+		<div class="nav-big-left">
+			<div style="text-align: center;">
+				<h2>MALCOMINES</h2>
+				<h2>GROUP</h2>
+			</div>
+		</div>
+		<div class="nav-big-right">
+			<div style="text-align: center;">
+				<h2>Creating Opportunities</h2>
+				<h2>Since 2014</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="nav-small">
+		<div>
+			<div style="padding-top: 5vh;padding-bottom: 5vh;">
+				<h2>MALCOMINES</h2>
+				<h2>GROUP</h2>
+				<hr style="border: 2px solid maroon;width: 60%;margin-left: 20%;border-radius: 10px;margin-top: 10px;margin-bottom: 10px;">
+				<h2>Creating Opportunities</h2>
+				<h2>Since 2014</h2>
+			</div>
+		</div>
+	</div>
+	<div class="drop-down">
+		<div style="float: left; display: flex;align-items: center; width: 50%;background-color: maroon;color: white; height: 50px;">
+			<a href="index.html"><img src="images/home-s1.png"></a>
+		</div>
+		<div style="float: left; display: flex;align-items: center; width: 50%; background-color: maroon;color: white;height: 50px;">
+			<img onclick="drop()" style="margin-left: 75%;" src="images/menu.png" height="80%">
+		</div>
+	</div>
+	<div id="drop" >
+		<div>
+		<h2><img onclick="lock()" src="images/clo.png"></h2>
+		<h2 id="bot-border"><a style="color: white;" href="metals.html">Malco Minor Metals</a></h2>
+		<h2 id="bot-border"><a style="color: white;" href="energy.html">Malco Energy</a></h2>
+		<h2 id="bot-border"><a style="color: white;" href="food.html">Malco Food</a></h2>
+		<h2 id="bot-border"><a style="color: white;" href="resort.html">Malco Resort</a></h2>
+		<h2 id="bot-border"><a style="color: white;" href="polo.html">Malco Polo</a></h2>
+		
+		</div>
+	</div>
+	<div style="overflow: auto;" class="big-links">
+    <div  style="text-align:center;background-color: maroon;"><a href="index.html"><img style="padding-top:2px;border-bottom: 2px solid whitesmoke;" src="images/home-s1.png"></a></div>
+    <div class="big-links-left">
+      <div style="width:90%; color: white;">
+       | <a href="metals.html">Malco Metals</a> | <a href="energy.html"> Malco Energy</a> | <a href="food.html"> Malco Food</a> | <a href="polo.html"> Malco Polo</a> | <a href="resort.html"> Malco Resort</a>
+    </div>
+  </div>
+
+</div>
+	<div id="polo-theme">
+		<div style="background-color: whitesmoke; width: 60%; font-size: 1.8rem;border: 5px double; maroon;">
+			<div>Next Game</div>
+			<div>
+				<div>Malcomines</div>
+				<div>VS</div>
+				<div>Rubicon</div>
+			</div>
+			<div id="more-games" onclick="pop()"><a>More Fixtures</a></div>
+		</div>
+	</div>
+	<div id="fixtures">
+		<img onclick="popOff()" class="pad-5" src="images/clo.png">
+		<div class="pad-5">#########</div>
+		<div class="pad-5">#########</div>
+		<div class="pad-5">#########</div>
+		<div class="pad-5">#########</div>
+		<div class="pad-5">#########</div>
+	</div>
+
+	<div class="polo-about">
+		<div style="width:90%;margin-left: 5%;padding-top: 5PX;text-align: center;">
+			MALCOMINES POLO TEAM<br>
+Our journey began in [Year] in Jos, with a small group of riders and a shared passion for polo. From humble beginnings, we grew into a recognized club, hosting top-tier tournaments and training exceptional players. Over the years, we've competed on national and international stages, earning a reputation for excellence. Today, we continue to promote the sport, nurture new talent, and celebrate the bond between horse and rider. Join us and be part of our ever-growing polo legacy.
+		</div>
+	</div>
+
+	<div id="polo-record">
+		<h1 style="text-align: center;">ACHIEVMENTS</h1>
+		<div id="record">Won the Governor’s Cup in Jos 2025 Polo Tournament</div>
+		<hr id="separate">
+		<div id="record">Won the Governor’s Cup in Bauchi 2024 Polo Tournament</div>
+		<hr id="separate">
+		<div id="record">Won the President’s Cup in Jos 2022 Naitonal Carnival Polo Tournament</div>
+		<hr id="separate">
+		<div id="record">Won the Governor’s Cup in Jos 2021 Polo Tournament</div>
+		<hr id="separate">
+		<div id="record">Won the Governor’s Cup in Jos 2020 Polo Tournament</div>
+		<hr id="separate">
+	</div>
+	
+	<div class="slider">
+  	<div class="slides" id="slideTrack">
+    <img src="assets/c1.jpg" alt="">
+    <img src="assets/c2.jpg" alt="">
+    <img src="assets/c3.jpg" alt="">
+    <img src="assets/c4.jpg" alt="">
+    <img src="assets/c5.jpg" alt="">
+    <img src="assets/n1.jpg" alt="">
+    <img src="assets/n4.jpg" alt="">
+    <img src="assets/n5.jpg" alt="">
+    <img src="assets/n2.jpg" alt="">
+    <img src="assets/d4.jpg" alt="">
+  </div>
+  <div class="nav">
+    <button onclick="prevSlide()">❮</button>
+    <button onclick="nextSlide()">❯</button>
+  </div>
+</div>
+	<div id="footer">
+		<h3 style="padding:3px;">Address: Murtala Mohammed Way, Jos</h3>
+		<h3 style="padding:3px;">Phone: +2340000000000</h3>
+		<h4 style="padding:3px;margin-top: 4px;">Copyright © 2025 Malcomines. All rights reserved.</h4>
+
+	</div>
+	<script type="text/javascript">
+		function drop()
+		{
+			document.getElementById('drop').style.display = 'block';
+		}
+		function lock()
+		{
+			document.getElementById('drop').style.display = 'none';
+		}
+		function pop()
+		{
+			document.getElementById('fixtures').style.display = 'block';
+		}
+
+		function popOff()
+		{
+			document.getElementById('fixtures').style.display = 'none';
+		}
+  let currentSlide = 0;
+  const slides = document.getElementById("slideTrack");
+  const totalSlides = slides.children.length;
+
+  function updateSlidePosition() {
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlidePosition();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateSlidePosition();
+  }
+
+  Auto-slide (optional)
+  setInterval(nextSlide, 3000);
+
+	</script>
+</body>
+</html>

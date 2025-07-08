@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malco Foods - Premium Taste & Quality</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #8b0000; /* Deep maroon */
+      --light: #f8f5f0; /* Cream background */
+      --dark: #333;
+      --text: #444;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      border: 2px solid var(--primary);
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      background: transparent;
+      
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Navigation */
+    header {
+      background: white;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo-icon {
+      font-size: 2.2rem;
+      
+      margin-right: 12px;
+    }
+    
+    .logo-text {
+      line-height: 1.2;
+    }
+    
+    .logo-text h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0;
+    }
+    
+    .logo-text span {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav ul li {
+      margin-left: 25px;
+    }
+    
+    nav ul li a {
+      font-weight: 500;
+      position: relative;
+      padding: 5px 0;
+      transition: color 0.3s;
+    }
+    
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: width 0.3s;
+    }
+    
+    nav ul li a:hover {
+      
+    }
+    
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+    
+    .mobile-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/food1.jpg') center/cover no-repeat;
+      height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    /* Section Styling */
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+    
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      animation: fadeInUp 1s ease forwards;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--primary);
+    }
+
+    section h2 {
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 3px;
+      background: var(--secondary);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Image Grid */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin: 40px auto;
+      max-width: 900px;
+    }
+
+    .grid-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      height: 300px;
+    }
+    
+    .grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .grid-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .grid-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(139, 0, 0, 0.85);
+      color: white;
+      padding: 15px;
+      text-align: center;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .grid-item:hover .grid-caption {
+      transform: translateY(0);
+    }
+
+    /* Icon Cards */
+    .info-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      color: maroon;
+      margin: 50px auto;
+      max-width: 900px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    .card-icon {
+      font-size: 3.5rem;
+      color: maroon;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+    
+    .card:hover .card-icon {
+      transform: scale(1.1);
+    }
+    
+    .card h3 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      color: maroon;
+    }
+
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(rgba(139, 0, 0, 0.9), rgba(139, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1556911220-ef412ae179a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      border-radius: 10px;
+      max-width: 900px;
+      margin: 40px auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: white;
+    }
+    
+    .cta p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 1.2rem;
+    }
+
+    
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 70px 0 0;
+      margin-top: 80px;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    
+    .footer-col h3 {
+      color: white;
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--secondary);
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+      transition: color 0.3s;
+      display: inline-block;
+    }
+    
+    .footer-links a:hover {
+      color: var(--secondary);
+      transform: translateX(5px);
+    }
+    .nav-big
+    {
+      width: 100%;
+      height: 23vh;
+      background-color: white;
+      
+      overflow: auto;
+      background-color: whitesmoke;
+      color: maroon;
+    }
+    .nav-big-left
+    {
+      width: 30%;
+      float: left;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2vw;
+    }
+    .nav-big-right
+    {
+      width: 70%;
+      float: left;
+      height: 100%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2vw;
+
+    }
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transition: all 0.3s;
+    }
+    
+    .social-links a:hover {
+      background: var(--secondary);
+      transform: translateY(-5px);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding: 25px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+      
+      .mobile-toggle {
+        display: block;
+      }
+      
+      .hero {
+        height: 60vh;
+      }
+      
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      section {
+        padding: 30px 20px;
+      }
+    }
+    @media (min-width:700px)
+    {
+      .nav-small
+      {
+        display: none;
+      }
+      .drop-down
+      {
+        display: none;
+      }
+      #drop
+      {
+        display: none;
+      }
+      #malco-brief-small
+      {
+        display: none;
+      }
+      
+    }
+    @media (max-width:699px)
+    {
+      .nav-big
+      {
+        display: none;
+      }
+      .big-links
+      {
+        display: none;
+      }
+      #malco-brief-big
+      {
+        display: none;
+      }
+      
+    }
+    @media (max-width: 576px) {
+      .hero {
+        height: 50vh;
+      }
+      
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .hero p {
+        font-size: 1.2rem;
+      }
+    }
+.nav-small
+    {
+      width: 100%;
+      text-align: center;
+      color: maroon;
+      background-color: whitesmoke;
+    }
+    #drop
+    {
+      text-align: center;
+      background-color: maroon;
+      color: white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      display: none;
+    }
+    .big-links-left
+    {
+      width: 100%;
+      height: 12vh;
+      text-align: center;
+      font-size: 4vh;
+      float: left;
+      background-color: maroon;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #bot-border
+    {
+      border: 3px inset white;
+      border-top: none;
+      border-bottom: none;
+      margin-top: 5px;
+      width: 80%;
+      margin-left: 10%;
+    }
+    .copyright {
+      text-align: center;
+      padding: 25px 0;
+      background-color: maroon;
+      color: white;
+      font-size: 0.9rem;
+    }
+    .drop-down
+    {
+      overflow: auto;
+    }
+    #about 
+    {
+      color: maroon;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-big">
+    <div class="nav-big-left">
+      <div style="text-align: center;">
+        <h2>MALCOMINES</h2>
+        <h2>GROUP</h2>
+      </div>
+    </div>
+    <div class="nav-big-right">
+      <div style="text-align: center;">
+        <h2>Creating Opportunities</h2>
+        <h2>Since 2014</h2>
+      </div>
+    </div>
+  </div>
+  <div class="nav-small">
+    <div>
+      <div style="padding-top: 5vh;padding-bottom: 5vh;">
+        <h2>MALCOMINES</h2>
+        <h2>GROUP</h2>
+        <hr style="border: 2px solid maroon;width: 60%;margin-left: 20%;border-radius: 10px;margin-top: 10px;margin-bottom: 10px;">
+        <h2>Creating Opportunities</h2>
+        <h2>Since 2014</h2>
+      </div>
+    </div>
+  </div>
+  <div class="drop-down">
+    <div style="float: left; display: flex;align-items: center; width: 50%;background-color: maroon;color: white; height: 50px;">
+      <a href="index.html"><img src="images/home-s1.png"></a>
+    </div>
+    <div style="float: left; display: flex;align-items: center; width: 50%; background-color: maroon;color: white;height: 50px;">
+      <img onclick="drop()" style="margin-left: 75%;" src="images/menu.png" height="80%">
+    </div>
+  </div>
+  <div id="drop">
+    <div>
+    <h2><img onclick="lock()" src="images/clo.png"></h2>
+    <h2 id="bot-border"><a style="color: white;" href="metals.html">Malco Minor Metals</a></h2>
+    <h2 id="bot-border"><a style="color: white;" href="energy.html">Malco Energy</a></h2>
+    <h2 id="bot-border"><a style="color: white;" href="food.html">Malco Food</a></h2>
+    <h2 id="bot-border"><a style="color: white;" href="resort.html">Malco Resort</a></h2>
+    <h2 id="bot-border"><a style="color: white;" href="polo.html">Malco Polo</a>
+    </h2>
+    </div>
+  </div>
+  <div style="overflow: auto;" class="big-links">
+    <div style="text-align:center;background-color: maroon;"><a href="index.html"><img style="padding-top:2px;border-bottom: 2px solid whitesmoke;" src="images/home-s1.png"></a></div>
+    <div class="big-links-left">
+      <div style="width:90%; color: white;">
+       | <a href="metals.html">Malco Metals</a> | <a href="energy.html"> Malco Energy</a> | <a href="food.html"> Malco Food</a> | <a href="polo.html"> Malco Polo</a> | <a href="resort.html"> Malco Resort</a>
+    </div>
+  </div>
+</div>
+  <!-- Hero Section -->
+  <div class="hero" id="home">
+    <h1>Malco Foods</h1>
+    <p>Bringing Taste & Quality to Every Table</p>
+    <a href="#about" class="btn">Discover More</a>
+  </div>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>Our Culinary Excellence</h2>
+    <p>At Malco Foods, we're passionate about creating exceptional dining experiences and delicious snacks that bring joy to every occasion.</p>
+    
+    <div style="margin: 30px 0;">
+      <h3>Our Restaurant</h3>
+      <p>Malco Restaurant offers a variety of delicious local and continental dishes in a clean, friendly environment. Our chefs prioritize taste, hygiene, and customer satisfaction. We source fresh ingredients daily to ensure the highest quality meals for our valued customers.</p>
+    </div>
+    
+    <div>
+      <h3>Malco Biscuits</h3>
+      <p>Our biscuit company produces crunchy, tasty snacks loved by families and school kids alike. Distributed nationwide, Malco Biscuits are made with high-quality ingredients and strict production standards. We offer a wide range of flavors to satisfy every palate.</p>
+    </div>
+  </section>
+
+  
+
+  <!-- Info Cards -->
+  <div class="info-cards">
+    <div class="card">
+      <div class="card-icon">
+        <i class="fas fa-certificate"></i>
+      </div>
+      <h3>Experienced Chefs</h3>
+      <p>Our culinary team brings decades of expertise to create unforgettable dishes.</p>
+    </div>
+    
+    <div class="card">
+      <div class="card-icon">
+        <i class="fas fa-cookie-bite"></i>
+      </div>
+      <h3>Nationwide Snacks</h3>
+      <p>Malco Biscuits available throughout Nigeria with consistent quality.</p>
+    </div>
+    
+    <div class="card">
+      <div class="card-icon">
+        <i class="fas fa-certificate"></i>
+      </div>
+      <h3>Hygiene Certified</h3>
+      <p>All facilities meet the highest standards of cleanliness and safety.</p>
+    </div>
+  </div>
+
+  
+        
+
+  <!-- CTA Section -->
+  <div class="cta" id="contact">
+    <h2>Become a Malco Biscuits Distributor</h2>
+    <p>Join our nationwide network and bring quality snacks to your community</p>
+    <a href="#" class="btn">Partner With Us</a>
+  </div>
+
+  <div class="copyright">
+      <h3 style="padding:3px;">Address: Murtala Mohammed Way, Jos</h3>
+    <h3 style="padding:3px;">Phone: +2340000000000</h3>
+      <p>Copyright © 2025 Malcomines Group. All rights reserved.</p>
+    </div>
+
+     <script type="text/javascript">
+    function drop()
+    {
+      document.getElementById('drop').style.display = 'block';
+    }
+    function lock()
+    {
+      document.getElementById('drop').style.display = 'none';
+    }
+    function pop()
+    {
+      document.getElementById('fixtures').style.display = 'block';
+    }
+
+    function popOff()
+    {
+      document.getElementById('fixtures').style.display = 'none';
+    }
+  let currentSlide = 0;
+  const slides = document.getElementById("slideTrack");
+  const totalSlides = slides.children.length;
+
+  function updateSlidePosition() {
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlidePosition();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateSlidePosition();
+  }
+
+  Auto-slide (optional)
+  setInterval(nextSlide, 5000);
+
+  </script>   
+       
+
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-toggle').addEventListener('click', function() {
+      const nav = document.querySelector('nav ul');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

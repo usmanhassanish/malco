@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<style type="text/css">
+		*
+		{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'poppins',trebuchet ms, monospace;
+			text-decoration: none;
+		}
+		@media (min-width:700px)
+		{
+			.nav-small
+			{
+				display: none;
+			}
+			.drop-down
+			{
+				display: none;
+			}
+			#drop
+			{
+				display: none;
+			}
+			#malco-brief-small
+			{
+				display: none;
+			}
+			
+		}
+		@media (max-width:699px)
+		{
+			.nav-big
+			{
+				display: none;
+			}
+			.big-links
+			{
+				display: none;
+			}
+			#malco-brief-big
+			{
+				display: none;
+			}
+			
+		}
+		.nav-big
+		{
+			width: 100%;
+			height: 23vh;
+			background-color: white;
+			
+			overflow: auto;
+			background-color: whitesmoke;
+			color: maroon;
+		}
+		.nav-big-left
+		{
+			width: 30%;
+			float: left;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 2vw;
+		}
+		.nav-big-right
+		{
+			width: 70%;
+			float: left;
+			height: 100%;
+			background-color: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 2vw;
+
+		}
+		.nav-small
+		{
+			width: 100%;
+			text-align: center;
+			color: maroon;
+			background-color: whitesmoke;
+		}
+		#drop
+		{
+			text-align: center;
+			background-color: maroon;
+			color: white;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			display: none;
+		}
+		.drop-down
+		{
+			overflow: auto;
+		}
+		.big-links-left
+		{
+			width: 100%;
+			height: 12vh;
+			font-size: 4vh;
+			float: left;
+			background-color: maroon;
+			color: white;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		
+		#footer
+		{
+			background-color: maroon;
+			color: white;
+			text-align: center;
+			font-family: trebuchet ms;
+			
+		}
+		#bot-border
+		{
+			border: 3px inset white;
+			border-top: none;
+			border-bottom: none;
+			margin-top: 5px;
+			width: 80%;
+			font-family: trebuchet ms;
+			margin-left: 10%;
+		}
+		#polo-theme
+		{
+			width: 100%;
+			height: 60vh;
+			background-image: url('assets/c1.jpg');
+			background-position: center;
+			background-size: cover;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			color: maroon;
+		}
+		#fixtures
+		{
+			width: 70%;
+			margin-left: 15%;
+			position: fixed;
+			margin-top: -80vh;
+			background-color: white;
+			border-radius: ;
+			display: none;
+			text-align: center;
+			border: 4px solid whitesmoke;
+			color: maroon;
+		}
+		#more-games
+		{
+			background-color: white;
+		}
+		.pad-5
+		{
+			padding: 5px;
+			font-size: 1.2rem;
+		}
+		a 
+		{
+			color: inherit;
+		}
+		.polo-about
+		{
+			color: maroon;
+			font-size: 1.5rem;
+			padding-bottom: 3px;
+		}
+		#polo-record
+		{
+			color: maroon;
+			background-color: whitesmoke;
+			padding-top: 3px;
+		}
+		#record
+		{
+			margin-left: 10px;
+			font-size: 1.5rem;
+			padding: 3px;
+		}
+		#metals-theme
+		{
+			width: 100%;
+			height: 45vh;
+			background-image: url('images/site.jpg');
+			background-position: center;
+			background-size: cover;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			color: maroon;
+		}
+		.ticker-container {
+      width: 100%;
+      height: 4vh;
+      background: whitesmoke;
+      color: maroon;
+      overflow: hidden;
+      position: relative;
+      font-size: 2.5vh;
+      display: flex;
+      align-items: center;
+      font-family: monospace;
+    }
+
+    .ticker-text {
+      white-space: nowrap;
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll 15s linear infinite;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+	</style>
+</head>
+<body>
+	<div class="nav-big">
+		<div class="nav-big-left">
+			<div style="text-align: center;">
+				<h2>MALCOMINES</h2>
+				<h2>GROUP</h2>
+			</div>
+		</div>
+		<div class="nav-big-right">
+			<div style="text-align: center;">
+				<h2>Creating Opportunities</h2>
+				<h2>Since 2014</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="nav-small">
+		<div>
+			<div style="padding-top: 5vh;padding-bottom: 5vh;">
+				<h2>MALCOMINES</h2>
+				<h2>GROUP</h2>
+				<hr style="border: 2px solid maroon;width: 60%;margin-left: 20%;border-radius: 10px;margin-top: 10px;margin-bottom: 10px;">
+				<h2>Creating Opportunities</h2>
+				<h2>Since 2014</h2>
+			</div>
+		</div>
+	</div>
+	<div class="ticker-container">
+    <div class="ticker-text">
+      📈 Tantalite ₦35 |  Columbite ₦120 |  Lead ₦100 |  Zinc ₦200 |  Tin ₦180
+    </div>
+  </div>
+	<div class="drop-down">
+		<div style="float: left; display: flex;align-items: center; width: 50%;background-color: maroon;color: white; height: 50px;">
+			<a href="index.html"><img src="images/home-s1.png"></a>
+		</div>
+		<div style="float: left; display: flex;align-items: center; width: 50%; background-color: maroon;color: white;height: 50px;">
+			<img onclick="drop()" style="margin-left: 75%;" src="images/menu.png" height="80%">
+		</div>
+	</div>
+	<div id="drop" style="font-family: trebuchet ms;">
+		<div>
+		<h2><img onclick="lock()" src="images/clo.png"></h2>
+		<h2 id="bot-border"><a style="color: white;" href="metals.html">Malco Minor Metals</a></h2>
+		<h2 id="bot-border"><a style="color: white;" href="energy.html">Malco Energy</a></h2>
+		<h2 id="bot-border"><a style="color: white;" href="food.html">Malco Food</a></h2>
+		<h2 id="bot-border"><a style="color: white;" href="resort.html">Malco Resort</a></h2>
+		<h2 id="bot-border"><a style="color: white;" href="polo.html">Malco Polo</a></h2>
+		
+		</div>
+	</div>
+	<div style="overflow: auto;" class="big-links">
+    <div style="text-align:center;background-color: maroon;"><a href="index.html"><img style="padding-top:2px;border-bottom: 2px solid whitesmoke;" src="images/home-s1.png"></a></div>
+    <div class="big-links-left">
+      <div style="width:90%; color: white;">
+       | <a href="metals.html">Malco Metals</a> | <a href="energy.html"> Malco Energy</a> | <a href="food.html"> Malco Food</a> | <a href="polo.html"> Malco Polo</a> | <a href="resort.html"> Malco Resort</a>
+    </div>
+  </div>
+
+</div>
+	<div id="metals-theme">
+		
+	</div>
+
+	<div style="width:80%; margin-left: 10%;padding: 5px;background-color: whitesmoke; border-bottom-radius: 20px;text-align: center;font-size: 1.5rem;color: maroon;">
+		Malcomines is a prominent mining company based in Jos, Plateau State, Nigeria. The company specializes in the exploration and export of solid minerals such as tin, columbite, lead, zinc, and tantalite. With decades of experience, Malcomines plays a key role in Nigeria's solid mineral sector. The company adheres to global best practices in mineral processing and export.
+	</div>
+
+
+	<div style="width:60%;margin-left: 20%;font-size: 1.5rem; background-color: white;border: 2px solid maroon;text-align: center;margin-top: 10px;">
+		WE BUY
+	</div>
+	<div style="width:60%;margin-left: 20%;font-size: 1.5rem;background-color: whitesmoke;text-align: center;color: maroon;">
+		<div style="border: 2px solid white; overflow: auto;">
+			<div style="float:left;width: 70%;">Columbite</div>
+			<div style="float:left;width: 30%;background-color: white;">N70/KG</div>
+		</div>
+		<div style="border: 2px solid white; overflow: auto;">
+			<div style="float:left;width: 70%;">Tantalite</div>
+			<div style="float:left;width: 30%;background-color: white;">N70/KG</div>
+		</div>
+		<div style="border: 2px solid white; overflow: auto;">
+			<div style="float:left;width: 70%;">Lead</div>
+			<div style="float:left;width: 30%;background-color: white;">N70/KG</div>
+		</div>
+		<div style="border: 2px solid white; overflow: auto;">
+			<div style="float:left;width: 70%;">Zinc</div>
+			<div style="float:left;width: 30%;background-color: white;">N70/KG</div>
+		</div>
+		<div style="border: 2px solid white; overflow: auto;">
+			<div style="float:left;width: 70%;">Tin</div>
+			<div style="float:left;width: 30%;background-color: white;">N70/KG</div>
+		</div>
+	</div>
+
+	<div id="footer">
+		<h3 style="padding:3px;">Address: Murtala Mohammed Way, Jos</h3>
+		<h3 style="padding:3px;">Phone: +2340000000000</h3>
+		<h4 style="padding:3px;margin-top: 4px;">Copyright © 2025 Malcomines. All rights reserved.</h4>
+
+	</div>
+	<script type="text/javascript">
+		function drop()
+		{
+			document.getElementById('drop').style.display = 'block';
+		}
+		function lock()
+		{
+			document.getElementById('drop').style.display = 'none';
+		}
+		function pop()
+		{
+			document.getElementById('fixtures').style.display = 'block';
+		}
+
+		function popOff()
+		{
+			document.getElementById('fixtures').style.display = 'none';
+		}
+  let currentSlide = 0;
+  const slides = document.getElementById("slideTrack");
+  const totalSlides = slides.children.length;
+
+  function updateSlidePosition() {
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlidePosition();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateSlidePosition();
+  }
+
+  Auto-slide (optional)
+  setInterval(nextSlide, 5000);
+
+	</script>
+</body>
+</html>

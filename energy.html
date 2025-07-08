@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Malco Oil & Gas - Reliable Fuel Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', trebuchet ms, monospace;
+            text-decoration: none;
+        }
+                
+        body {
+                        line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: maroon;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+            border-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: transparent;
+            color: var(--secondary);
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-right: 12px;
+        }
+        
+        .logo-text {
+            line-height: 1.2;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+        }
+        
+        .logo-text span {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            font-weight: 600;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: white, center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: maroon;
+            padding: 20px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: maroon;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: white;
+            color: maroon;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 80px 0;
+            background: #f0f2f5;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(139, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/fuel.jpg') center/cover fixed;
+            color: white;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat-item {
+            padding: 30px;
+        }
+        
+        .stat-item i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .stat-item .number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .cta-box {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 50px 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        
+        
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .hero {
+                height: 70vh;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 60vh;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+        @media (min-width:700px)
+        {
+            .nav-small
+            {
+                display: none;
+            }
+            .drop-down
+            {
+                display: none;
+            }
+            #drop
+            {
+                display: none;
+            }
+            #malco-brief-small
+            {
+                display: none;
+            }
+            
+        }
+        @media (max-width:699px)
+        {
+            .nav-big
+            {
+                display: none;
+            }
+            .big-links
+            {
+                display: none;
+            }
+            #malco-brief-big
+            {
+                display: none;
+            }
+            
+        }
+        .nav-big
+        {
+            width: 100%;
+            height: 23vh;
+            background-color: white;
+            
+            overflow: auto;
+            background-color: whitesmoke;
+            color: maroon;
+        }
+        .nav-big-left
+        {
+            width: 30%;
+            float: left;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2vw;
+        }
+        .nav-big-right
+        {
+            width: 70%;
+            float: left;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2vw;
+
+        }
+        .nav-small
+        {
+            width: 100%;
+            text-align: center;
+            color: maroon;
+            background-color: whitesmoke;
+        }
+        #drop
+        {
+            text-align: center;
+            background-color: maroon;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: none;
+        }
+        .drop-down
+        {
+            overflow: auto;
+
+        }
+        .big-links-left
+        {
+            width: 100%;
+            height: 12vh;
+            font-size: 4vh;
+            background-color: maroon;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        
+        #footer
+        {
+            background-color: maroon;
+            color: white;
+            text-align: center;
+           
+            
+        }
+        #bot-border
+        {
+            border: 3px inset white;
+            border-top: none;
+            border-bottom: none;
+            margin-top: 5px;
+            width: 80%;
+           
+            margin-left: 10%;
+        }
+
+        #polo-theme
+        {
+            width: 100%;
+            height: 60vh;
+            background-image: url('assets/c1.jpg');
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: maroon;
+        }
+        #fixtures
+        {
+            width: 70%;
+            margin-left: 15%;
+            position: fixed;
+            margin-top: -80vh;
+            background-color: white;
+            border-radius: ;
+            display: none;
+            text-align: center;
+            border: 4px solid whitesmoke;
+            color: maroon;
+        }
+        #more-games
+        {
+            background-color: white;
+        }
+        .pad-5
+        {
+            padding: 5px;
+            font-size: 1.2rem;
+        }
+        .polo-about
+        {
+            color: maroon;
+            font-size: 1.5rem;
+            padding-bottom: 3px;
+        }
+        #polo-record
+        {
+            color: maroon;
+            background-color: whitesmoke;
+            padding-top: 3px;
+        }
+        #record
+        {
+            margin-left: 10px;
+            font-size: 1.5rem;
+            padding: 3px;
+        }
+        a 
+        {
+            color: inherit;
+        }
+        #metals-theme
+        {
+            width: 100%;
+            height: 60vh;
+            background-image: url('images/site.jpg');
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: maroon;
+        }
+        .copyright {
+      text-align: center;
+      padding: 25px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+        color: white;
+    }
+        .ticker-container {
+      width: 100%;
+      height: 3vh;
+      background: whitesmoke;
+      color: maroon;
+      overflow: hidden;
+      position: relative;
+      font-size: 2vh;
+      display: flex;
+      align-items: center;
+    
+    }
+
+    .ticker-text {
+      white-space: nowrap;
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll 15s linear infinite;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    </style>
+</head>
+<body>
+    <div class="nav-big">
+    <div class="nav-big-left">
+      <div style="text-align: center;">
+        <h2>MALCOMINES</h2>
+        <h2>GROUP</h2>
+      </div>
+    </div>
+    <div class="nav-big-right">
+      <div style="text-align: center;">
+        <h2>Creating Opportunities</h2>
+        <h2>Since 2014</h2>
+      </div>
+    </div>
+  </div>
+  <div class="nav-small">
+    <div>
+      <div style="padding-top: 5vh;padding-bottom: 5vh;">
+        <h2>MALCOMINES</h2>
+        <h2>GROUP</h2>
+        <hr style="border: 2px solid maroon;width: 60%;margin-left: 20%;border-radius: 10px;margin-top: 10px;margin-bottom: 10px;">
+        <h2>Creating Opportunities</h2>
+        <h2>Since 2014</h2>
+      </div>
+    </div>
+  </div>
+  <div class="drop-down">
+    <div style="float: left; display: flex;align-items: center; width: 50%;background-color: maroon;color: white; height: 50px;">
+      <a href="index.html"><img src="images/home-s1.png"></a>
+    </div>
+    <div style="float: left; display: flex;align-items: center; width: 50%; background-color: maroon;color: white;height: 50px;">
+      <img onclick="drop()" style="margin-left: 75%;" src="images/menu.png" height="80%">
+    </div>
+  </div>
+  <div id="drop">
+    <div>
+    <h2><img onclick="lock()" src="images/clo.png"></h2>
+    <h2 id="bot-border"><a style="color: white;" href="metals.html">Malco Minor Metals</a></h2>
+    <h2 id="bot-border"><a style="color: white;" href="energy.html">Malco Energy</a></h2>
+    <h2 id="bot-border"><a style="color: white;" href="food.html">Malco Food</a></h2>
+    <h2 id="bot-border"><a style="color: white;" href="resort.html">Malco Resort</a></h2>
+    <h2 id="bot-border"><a style="color: white;" href="polo.html">Malco Polo</a></h2>
+    </div>
+  </div>
+   <div style="overflow: auto;" class="big-links">
+    <div style="text-align:center;background-color: maroon;"><a href="index.html"><img style="padding-top:2px;border-bottom: 2px solid whitesmoke;" src="images/home-s1.png"></a></div>
+    <div class="big-links-left">
+      <div style="width:90%;color: white;">
+       | <a href="metals.html">Malco Metals</a> | <a href="energy.html"> Malco Energy</a> | <a href="food.html"> Malco Food</a> | <a href="polo.html"> Malco Polo</a> | <a href="resort.html"> Malco Resort</a>
+    </div>
+  </div>
+
+</div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Reliable Fuel Solutions Across Nigeria</h1>
+            <p>Quality petroleum products and services delivered with integrity and efficiency</p>
+            <a href="#services" class="btn">Our Services</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Quality fuels and lubricants for every need</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <h3>Premium Motor Spirit</h3>
+                    <p>High-quality petrol that ensures optimal engine performance and fuel efficiency for all types of vehicles.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck-moving"></i>
+                    </div>
+                    <h3>Automotive Gas Oil</h3>
+                    <p>Superior diesel fuel for trucks, buses, generators, and industrial equipment with enhanced lubrication.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <h3>Lubricants & Car Care</h3>
+                    <p>Full range of engine oils, transmission fluids, and car care products for optimal vehicle maintenance.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Vehicle Servicing</h3>
+                    <p>Professional maintenance and repair services at select locations to keep your vehicle in top condition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Malco Oil & Gas</h2>
+                <p>Committed to excellence in every drop</p>
+            </div>
+            
+            <div class="stats-grid">
+                
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <div class="number">500,000+</div>
+                    <h3>Satisfied Customers</h3>
+                </div>
+                
+                <div class="stat-item">
+                    <i class="fas fa-certificate"></i>
+                    <div class="number">100%</div>
+                    <h3>Quality Certified</h3>
+                </div>
+                
+                <div class="stat-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="number">100%</div>
+                    <h3>Service Availability</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+     <div id="footer">
+        <h3 style="padding:3px;">Address: Murtala Mohammed Way, Jos</h3>
+        <h3 style="padding:3px;">Phone: +2340000000000</h3>
+        <h4 style="padding:3px;margin-top: 4px;">Copyright © 2025 Malcomines. All rights reserved.</h4>
+
+    </div>
+
+
+    <script type="text/javascript">
+    function drop()
+    {
+      document.getElementById('drop').style.display = 'block';
+    }
+    function lock()
+    {
+      document.getElementById('drop').style.display = 'none';
+    }
+    function pop()
+    {
+      document.getElementById('fixtures').style.display = 'block';
+    }
+
+    function popOff()
+    {
+      document.getElementById('fixtures').style.display = 'none';
+    }
+  let currentSlide = 0;
+  const slides = document.getElementById("slideTrack");
+  const totalSlides = slides.children.length;
+
+  function updateSlidePosition() {
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlidePosition();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateSlidePosition();
+  }
+
+  Auto-slide (optional)
+  setInterval(nextSlide, 5000);
+
+  </script> 
+</body>
+</html>
